@@ -17,7 +17,7 @@ Napisanie programu, który przekształci plik z języka C na język Python.
 [GitHub - miskrz/TKiK-C-to-Python](https://github.com/miskrz/TKiK-C-to-Python)
 
 ## Informacja o stosowanych generatorach skanerów/parserów, pakietach zewnętrznych
-Wykonane przy użyciu Antlrv4 oraz C#
+Wykonane przy użyciu ANTLR4 oraz C#
 
 ## Krótka instrukcja obsługi
 Odpowiednie biblioteki ANTLRv4 zainstalowane w Riderze.
