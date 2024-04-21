@@ -25,8 +25,7 @@ Testowanie gramatyki po użyciu skrótu klawiszowego ctrl + shift + G
 
 ## Przykład
 przykładowy plik do przetestowania gramatyki w pliku test.c
+
 ---
 
-[**Powrót do opisu ogólnego**](dydaktyka:kompilatory:2024:start)
-
-[**Powrót do listy projektów**](dydaktyka:kompilatory:2024:projekty:start)
+[**Link do strony na wiki**](https://home.agh.edu.pl/~jpi/dokuwiki/doku.php?id=dydaktyka:kompilatory:2024:projekty:temat6)
