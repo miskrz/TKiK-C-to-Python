@@ -25,7 +25,7 @@ fvector initialize_f() {
 }
 
 //wczytanie danych z pliku
-void load_data_moje_gupie(fvector * v) {
+void load_data_moje(fvector * v) {
     //inicjalizowanie zmiennych
     FILE * file;     
     lvector new_line_help;   
