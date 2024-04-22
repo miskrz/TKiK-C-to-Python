@@ -5,23 +5,36 @@ start
     ;
 
 translationUnit
-    :   includeStatement
-    |   defineStatement
+    :   hashStatement
     |   statement
-    |   translationUnit includeStatement
-    |   translationUnit defineStatement
+    |   translationUnit hashStatement
     |   translationUnit statement
+    ;
+  
+hashStatement
+    : includeStatement
+    | defineStatement
+    | ifndefStatement
+    | endIfStatement
+    ;
+    
+ifndefStatement
+    : Hash_ifndef value
+    ;
+  
+endIfStatement
+    : Hash_endif
     ;
     
 defineStatement
-    : Hash_Define value (value|string)
+    : Hash_Define value (value|string)?
     ;
 
 includeStatement
-                : Hash_Include (Less libraryName Greater)
+                : Hash_Include ((Less libraryName Greater)|libraryName)
                 ;
                 
-libraryName     : Identifier;
+libraryName     : Library_Identifier|StringLiteral;
 
 statement
          : switchStatement
@@ -121,7 +134,7 @@ typeSpecifier
     ;
  
  value
-     :   (       
+     : Minus? (       
        prefixOperation? Identifier arrayStatement? parenStatement?
      | IntegerConstant
      | FloatConstant
@@ -136,25 +149,27 @@ typePrefix
     ; 
     
 prefixOperation
-    : Multiply + Multiply
-    | Multiply
+    : Multiply
+    | MultiplyMultiply
     | PlusPlus
     | MinusMinus
     | Ampersand
     | Exclamation
-    | LeftParen (typePrefix)* typeSpecifier prefixOperation? RightParen //cast
+    | LeftParen (typePrefix)* typeSpecifier postfixOperation? RightParen //cast
     ;
     
 postfixOperation
     : (
       Assign 
-    | Multiply + Assign
-    | Divide + Assign
-    | Plus + Assign
-    | Minus + Assign
-    | Mod + Assign
+    | MultiplyAssign
+    | DivideAssign
+    | PlusAssign
+    | MinusAssign
+    | ModAssign
     | PlusPlus 
     | MinusMinus
+    | Multiply
+    | MultiplyMultiply
     | Arrow expression   
     | Dot expression
     ) 
@@ -178,16 +193,16 @@ arrayInitList
 parenStatement
       : prefixOperation? (      
         LeftParen RightParen
-      | (LeftParen ((typeSpecifier prefixOperation?)|value|expressionList) RightParen)
+      | (LeftParen ((typeSpecifier postfixOperation?)|value|expressionList) RightParen)
       )      
       ;             
           
 declaration    
-           :   (typePrefix)* typeSpecifier value postfixOperation (arrayAssign|expression) (Comma value postfixOperation (arrayAssign|expression))*
-           |   (typePrefix)* typeSpecifier value (Comma value)* postfixOperation (arrayAssign|expression) (Comma expression)*
+           :   (typePrefix)* typeSpecifier value Assign (arrayAssign|expression) (Comma value Assign (arrayAssign|expression))*
+           |   (typePrefix)* typeSpecifier value (Comma value)* Assign (arrayAssign|expression) (Comma expression)*
            |   (typePrefix)* typeSpecifier value (Comma value)*
            |   (typePrefix)* typeSpecifier
-           |   (typePrefix)* typeSpecifier postfixOperation (arrayAssign|expression)
+           |   (typePrefix)* typeSpecifier Assign (arrayAssign|expression)
            ;  
 
 expression
@@ -215,12 +230,14 @@ primaryExpression
       ;
       
 assignExpression    
-      : value postfixOperation arrayAssign? prefixOperation? (expression)?
+      : value postfixOperation arrayAssign? postfixOperation? (expression)?
       ;
 
 //Tokens 
 Hash_Include        : '#include';
 Hash_Define         : '#DEFINE' | '#define';
+Hash_ifndef         : '#ifndef';
+Hash_endif          : '#endif';
 Return              : 'return';
 If                  : 'if';
 Else                : 'else';
@@ -237,7 +254,7 @@ Scanf               : 'scanf';
 Srand               : 'srand';
 Exit                : 'exit';
 Struct              : 'struct';
-Typedef              : 'typedef';
+Typedef             : 'typedef';
 Less                : '<';
 Greater             : '>';
 Semicolon           : ';';
@@ -259,6 +276,12 @@ SingleQuote         : '\'';
 DoubleQuote         : '"';
 PlusPlus            : '++';
 MinusMinus          : '--';
+MultiplyMultiply    : '**';
+MultiplyAssign      : '*=';
+DivideAssign        : '/=';
+PlusAssign          : '+=';
+MinusAssign         : '-=';
+ModAssign           : '%=';
 Ampersand           : '&';
 Mod                 : '%';
 Arrow               : '->';
@@ -267,7 +290,6 @@ Exclamation         : '!';
 
 Identifier
     : IdentifierNondigit (IdentifierNondigit | Digit)*
-    | Library_Identifier
     ;
 
 fragment IdentifierNondigit
@@ -297,19 +319,18 @@ Constant
     :   IntegerConstant
     |   FloatConstant
     ;
-
-fragment 
+ 
 Library_Identifier
     : ([a-zA-Z0-9/_])* '.h'
     ;
    
 IntegerConstant
-    :   ('-' ' '*)? NonzeroDigit Digit*
+    :   NonzeroDigit Digit*
     |   '0'
     ;
 
 FloatConstant
-    :   ('-' ' '*)? DigitSequence? '.' DigitSequence
+    :   DigitSequence? '.' DigitSequence
     |   DigitSequence '.'
     ;
                 
