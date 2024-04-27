@@ -40,8 +40,7 @@ int main(void) {
     return 0;
 }
 ```
-![Drzewo1](/Resources/parseTreeTransparent.png)
-![Drzewo2](/Resources/parseTreeDarkBackground.png)
+![Parse Tree Example](/Resources/parseTreeDarkBackground.png)
 
 ---
 
