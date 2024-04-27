@@ -14,17 +14,20 @@
 Napisanie programu, który przekształci plik z języka C na język Python.
 
 ## Spis tokenów
-[GitHub - miskrz/TKiK-C-to-Python](https://github.com/miskrz/TKiK-C-to-Python)
+[C_Tokens](https://github.com/miskrz/TKiK-C-to-Python/blob/main/Grammars/C_Tokens.g4)
+
+## Gramatyka przetwarzanego formatu
+[C_Grammar](https://github.com/miskrz/TKiK-C-to-Python/blob/main/Grammars/C_Grammar.g4)
 
 ## Informacja o stosowanych generatorach skanerów/parserów, pakietach zewnętrznych
 Wykonane przy użyciu ANTLRv4 oraz C#
 
 ## Krótka instrukcja obsługi
 Odpowiednie biblioteki ANTLRv4 zainstalowane w Riderze.
-Testowanie gramatyki po użyciu skrótu klawiszowego ctrl + shift + G
+Generowanie potrzebnych plików do działania następuje po użyciu skrótu klawiszowego `ctrl + shift + G`.
 
 ## Przykład
-przykładowy plik do przetestowania gramatyki w pliku test.c
+Przykładowy plik do przetestowania gramatyki: [Plik testowy](https://github.com/miskrz/TKiK-C-to-Python/blob/main/TestPrograms/test1.c)
 
 ---
 
