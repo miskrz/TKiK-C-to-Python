@@ -29,6 +29,20 @@ Generowanie potrzebnych plików do działania następuje po użyciu skrótu klaw
 ## Przykład
 Przykładowy plik do przetestowania gramatyki: [Plik testowy](https://github.com/miskrz/TKiK-C-to-Python/blob/main/TestPrograms/test1.c)
 
+Przykład generowanego drzewa:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int i = 0;
+    
+    return 0;
+}
+```
+![Drzewo1](https://github.com/miskrz/TKiK-C-to-Python/tree/main/Resources/parseTreeTransparent.png)
+![Drzewo2](https://github.com/miskrz/TKiK-C-to-Python/tree/main/Resources/parseTreeDarkBackground.png)
+
 ---
 
 [**Link do strony na wiki**](https://home.agh.edu.pl/~jpi/dokuwiki/doku.php?id=dydaktyka:kompilatory:2024:projekty:temat6)
