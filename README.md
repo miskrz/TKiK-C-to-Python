@@ -40,8 +40,8 @@ int main(void) {
     return 0;
 }
 ```
-![Drzewo1](https://github.com/miskrz/TKiK-C-to-Python/tree/main/Resources/parseTreeTransparent.png)
-![Drzewo2](https://github.com/miskrz/TKiK-C-to-Python/tree/main/Resources/parseTreeDarkBackground.png)
+![Drzewo1](/Resources/parseTreeTransparent.png)
+![Drzewo2](/Resources/parseTreeDarkBackground.png)
 
 ---
 
