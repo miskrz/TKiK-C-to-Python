@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y745S1FelZMDbPuL02PxeyMMYGYc5na9qgSh2yL7hjeIqEtElXmaY0ZrGsOgUtQJ7zqQYsDgbYv2kFNkDNe54A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\miskr\\TKiK\\TKiK_repozytorium\\Output\\CGrammar\\CGrammar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\miskr\\.nuget\\packages\\antlr4.runtime.standard\\4.13.1\\antlr4.runtime.standard.4.13.1.nupkg.sha512",
+    "C:\\Users\\miskr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\miskr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.16\\microsoft.netcore.app.host.win-x64.7.0.16.nupkg.sha512",
+    "C:\\Users\\miskr\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\miskr\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
