@@ -185,16 +185,11 @@ parameterList
 	| parameterList Comma parameterDeclaration
 	;
 	
-typeQualifierList
-	: Const
-	| typeQualifierList Const
-	;
-	
 pointer
 	: Multiply
-	| Multiply typeQualifierList
+	| Multiply Const
 	| Multiply pointer
-	| Multiply typeQualifierList pointer
+	| Multiply Const pointer
 	;
 	
 directDeclarator
