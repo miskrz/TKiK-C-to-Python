@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:/Users/kacpe/OneDrive/Pulpit/Kompilatory/ProjektTKiK/Grammars/C_Grammar.g4 by ANTLR 4.13.1
+// Generated from C:/Users/miskr/TKiK/TKiK_repozytorium/Grammars/C_Grammar.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -51,23 +51,29 @@ public interface IC_GrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitHashStatement([NotNull] C_GrammarParser.HashStatementContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.conditionalStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
+	Result VisitConditionalStatement([NotNull] C_GrammarParser.ConditionalStatementContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitIfStatement([NotNull] C_GrammarParser.IfStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifElseStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIfElseStatement([NotNull] C_GrammarParser.IfElseStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.elseIfBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitElseIfBlock([NotNull] C_GrammarParser.ElseIfBlockContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.elifStatement"/>.
 	/// </summary>
@@ -81,23 +87,29 @@ public interface IC_GrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitElseStatement([NotNull] C_GrammarParser.ElseStatementContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.endIfStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitEndIfStatement([NotNull] C_GrammarParser.EndIfStatementContext context);
-	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.defineStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitDefineStatement([NotNull] C_GrammarParser.DefineStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.includeStatement"/>.
 	/// </summary>
@@ -200,18 +212,6 @@ public interface IC_GrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitInitializer([NotNull] C_GrammarParser.InitializerContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
-	/// <summary>
-	/// Visit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	/// <return>The visitor result.</return>
-	Result VisitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// </summary>

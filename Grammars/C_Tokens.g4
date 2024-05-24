@@ -189,7 +189,7 @@ fragment EscapeSequence
     ;
 
 fragment SimpleEscapeSequence
-    : '\\' ['"?abfnrtv\\]
+    : '\\' ['"?abfnrtv0\\]
     ;
 
 StringLiteral

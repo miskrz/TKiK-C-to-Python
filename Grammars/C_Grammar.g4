@@ -15,45 +15,52 @@ hashStatement
     : includeStatement
     | defineStatement
     | undefStatement
-    | ifdefStatement
-    | ifndefStatement
-    | ifStatement
-    | elifStatement
-    | elseStatement
-    | endIfStatement
+    | conditionalStatement
+    | ifdefStatement 
+    | ifndefStatement 
     ;
     
-undefStatement
-    : Hash_undef Identifier
+conditionalStatement
+    : ifStatement Hash_endif
+    | ifElseStatement Hash_endif
     ;
     
-ifdefStatement 
-    : Hash_ifdef Identifier
+ifStatement
+    : Hash_if expression statementList
     ;
 
-ifStatement
-    : Hash_if expression
+ifElseStatement
+    : ifStatement elseIfBlock? elseStatement?
+    ;
+
+elseIfBlock
+    : elifStatement
+    | elseIfBlock elifStatement
     ;
 
 elifStatement
-    : Hash_elif expression
+    : Hash_elif expression statementList
     ;
-    
+
 elseStatement
-    : Hash_else
-    ;
-    
-ifndefStatement 
-    : Hash_ifndef Identifier
-    ;
-  
-endIfStatement
-    : Hash_endif
+    : Hash_else statementList
     ;
     
 defineStatement
     : Hash_Define Identifier Constant
     ;
+
+undefStatement
+    : Hash_undef Identifier
+    ;
+    
+ifdefStatement 
+    : Hash_ifdef Identifier statementList Hash_endif
+    ;
+
+ifndefStatement 
+    : Hash_ifndef Identifier statementList Hash_endif
+    ;        
 
 includeStatement
     : Hash_Include Less libraryName Greater
@@ -151,24 +158,6 @@ initializer
 	| LeftBrace initializerList Comma RightBrace
 	;
 
-directAbstractDeclarator
-	: LeftParen abstractDeclarator RightParen
-	| LeftBracket RightBracket
-	| LeftBracket constantExpression RightBracket
-	| directAbstractDeclarator LeftBracket RightBracket
-	| directAbstractDeclarator LeftBracket constantExpression RightBracket
-	| LeftParen RightParen
-	| LeftParen parameterList RightParen
-	| directAbstractDeclarator LeftParen RightParen
-	| directAbstractDeclarator LeftParen parameterList RightParen
-	;
-	
-abstractDeclarator
-	: pointer
-	| directAbstractDeclarator
-	| pointer directAbstractDeclarator
-	;
-	
 identifierList
 	: Identifier
 	| identifierList Comma Identifier
@@ -176,7 +165,6 @@ identifierList
 	
 parameterDeclaration
 	: declarationSpecifiers declarator
-	| declarationSpecifiers abstractDeclarator
 	| declarationSpecifiers
 	;
 	
@@ -185,11 +173,15 @@ parameterList
 	| parameterList Comma parameterDeclaration
 	;
 	
+typeQualifierList
+	: Const
+	;
+	
 pointer
 	: Multiply
-	| Multiply Const
+	| Multiply typeQualifierList
 	| Multiply pointer
-	| Multiply Const pointer
+	| Multiply typeQualifierList pointer
 	;
 	
 directDeclarator
@@ -216,7 +208,6 @@ specifierQualifierList
 	
 structSpecifier
 	: Struct Identifier LeftBrace structDeclarationList RightBrace
-	| Struct LeftBrace structDeclarationList RightBrace
 	| Struct Identifier
 	;
 
@@ -236,8 +227,6 @@ structDeclaratorList
 	
 structDeclarator
 	: declarator
-	| Colon constantExpression
-	| declarator Colon constantExpression
 	;
 	
 storageClassSpecifier
@@ -269,7 +258,6 @@ typeNameIdentifier
     
 typeName
 	: specifierQualifierList
-	| specifierQualifierList abstractDeclarator
 	;
 	
 declarationSpecifiers

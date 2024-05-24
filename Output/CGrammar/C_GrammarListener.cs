@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:/Users/kacpe/OneDrive/Pulpit/Kompilatory/ProjektTKiK/Grammars/C_Grammar.g4 by ANTLR 4.13.1
+// Generated from C:/Users/miskr/TKiK/TKiK_repozytorium/Grammars/C_Grammar.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -62,25 +62,15 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitHashStatement([NotNull] C_GrammarParser.HashStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.conditionalStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
+	void EnterConditionalStatement([NotNull] C_GrammarParser.ConditionalStatementContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.conditionalStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
+	void ExitConditionalStatement([NotNull] C_GrammarParser.ConditionalStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifStatement"/>.
 	/// </summary>
@@ -91,6 +81,26 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitIfStatement([NotNull] C_GrammarParser.IfStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifElseStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfElseStatement([NotNull] C_GrammarParser.IfElseStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifElseStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfElseStatement([NotNull] C_GrammarParser.IfElseStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.elseIfBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterElseIfBlock([NotNull] C_GrammarParser.ElseIfBlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.elseIfBlock"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitElseIfBlock([NotNull] C_GrammarParser.ElseIfBlockContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.elifStatement"/>.
 	/// </summary>
@@ -112,26 +122,6 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitElseStatement([NotNull] C_GrammarParser.ElseStatementContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.endIfStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterEndIfStatement([NotNull] C_GrammarParser.EndIfStatementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.endIfStatement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitEndIfStatement([NotNull] C_GrammarParser.EndIfStatementContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.defineStatement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -141,6 +131,36 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitDefineStatement([NotNull] C_GrammarParser.DefineStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.includeStatement"/>.
 	/// </summary>
@@ -311,26 +331,6 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitInitializer([NotNull] C_GrammarParser.InitializerContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// </summary>

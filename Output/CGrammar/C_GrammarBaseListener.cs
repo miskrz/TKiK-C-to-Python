@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from C:/Users/kacpe/OneDrive/Pulpit/Kompilatory/ProjektTKiK/Grammars/C_Grammar.g4 by ANTLR 4.13.1
+// Generated from C:/Users/miskr/TKiK/TKiK_repozytorium/Grammars/C_Grammar.g4 by ANTLR 4.13.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -73,29 +73,17 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitHashStatement([NotNull] C_GrammarParser.HashStatementContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.conditionalStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context) { }
+	public virtual void EnterConditionalStatement([NotNull] C_GrammarParser.ConditionalStatementContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.conditionalStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context) { }
+	public virtual void ExitConditionalStatement([NotNull] C_GrammarParser.ConditionalStatementContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifStatement"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -108,6 +96,30 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitIfStatement([NotNull] C_GrammarParser.IfStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifElseStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfElseStatement([NotNull] C_GrammarParser.IfElseStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifElseStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfElseStatement([NotNull] C_GrammarParser.IfElseStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.elseIfBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterElseIfBlock([NotNull] C_GrammarParser.ElseIfBlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.elseIfBlock"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitElseIfBlock([NotNull] C_GrammarParser.ElseIfBlockContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.elifStatement"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -133,30 +145,6 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitElseStatement([NotNull] C_GrammarParser.ElseStatementContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.endIfStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterEndIfStatement([NotNull] C_GrammarParser.EndIfStatementContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.endIfStatement"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitEndIfStatement([NotNull] C_GrammarParser.EndIfStatementContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.defineStatement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -168,6 +156,42 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDefineStatement([NotNull] C_GrammarParser.DefineStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.undefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUndefStatement([NotNull] C_GrammarParser.UndefStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifdefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfdefStatement([NotNull] C_GrammarParser.IfdefStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.ifndefStatement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIfndefStatement([NotNull] C_GrammarParser.IfndefStatementContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.includeStatement"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -372,30 +396,6 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitInitializer([NotNull] C_GrammarParser.InitializerContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// <para>The default implementation does nothing.</para>

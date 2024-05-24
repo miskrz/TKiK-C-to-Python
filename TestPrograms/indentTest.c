@@ -8,15 +8,21 @@ int dodawanie(int liczba1,int liczba2){
 }
 
 int main() {
+    char text[100]; 
+    printf("Podaj string:\n");
+    scanf("%s", text); 
+
+    
+    printf("Podałeś: %s\n", text);
     int testDeklaracja;
     int testInicjalizacja = 1;
     int input1;
     char input2;
-    printf("Podaj liczbę od 0 do 9 oraz literę:\n");
+    printf("Podaj cyfrę od 0 do 9 oraz literę:\n");
     scanf("%d %c", &input1,&input2);
     struct myStructure s1;
-    s1.number1= 10;
-    s1.number2= -10;
+    printf("Podaj 2 liczby\n");
+    scanf("%d%d", &s1.number1, &s1.number2);
     printf("Struktura: %d %d\n", s1.number1, s1.number2);
 
     if (input1 == 0) {
@@ -71,14 +77,17 @@ int main() {
         case 'c':
             printf("Wybrano opcję c\n");
             break;
-        case 'e':
+        case 'd':
             printf("Wybrano opcję d\n");
             break;
-        case 'f':
+        case 'e':
             printf("Wybrano opcję e\n");
             break;
+        case 'f':
+            printf("Wybrano opcję f\n");
+            break;
         default:
-            printf("Wybrano inną literę niż a, b, c, d, e.\n");
+            printf("Wybrano inną literę niż a, b, c, d, e, f.\n");
             break;
     }
     if (s1.number1 > 0) {
