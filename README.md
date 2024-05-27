@@ -70,8 +70,6 @@ Przykładowy program ze strukturą, scanf i printf:
 5. Kolorowanie składni w obu okienkach (Wejście/Wyjście)
 6. Obsługa błędów - w razie błędu w gramatyce, zmienia kolor linii, w której znaleziono błąd na czerwony, a dokładniejsze informacje umieszcza w okienku "Błędy" 
 ![error](/Resources/error.png)
-## Link do repozytorium z kodem GitHub:
-- [Repozytorium z kodem](https://github.com/miskrz/TKiK-C-to-Python/)
 ## Dodatkowe informacje o projekcie
 - Kompilator obsługuje wszystkie podstawowe funkcjonalności języka C jak np.: funkcje, deklaracja, inicjalizacja, tablice, struktury, funkcje (`if`, `else`, `for`, `while`, `do while`, `switch`) i wiele więcej
 - Kompilator obsługuje również wybrane dodatkowe funkcje biblioteczne: `scanf`, `printf`, `srand`, `rand`, `strcmp`, `strcpy`
