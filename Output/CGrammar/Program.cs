@@ -18,9 +18,9 @@ namespace CGrammar
         public static bool errorDetected = false;
         static void Main(string[] args)
         {
-            string inputFilePath = "../../TestPrograms/indentTest.c";
+            string inputFilePath = "../OutputFiles/inputC.c";
             
-            string outputerrorFilePath = "../../OutputFiles/error.txt";
+            string outputerrorFilePath = "../OutputFiles/error.txt";
             using (FileStream fs = File.Create(outputerrorFilePath)) { }
 
             AntlrFileStream input = new AntlrFileStream(inputFilePath);
@@ -35,7 +35,7 @@ namespace CGrammar
             var visitor = new MyCGrammarVisitor();
             var result = visitor.VisitStart(startContext);
             
-            string outputfilePath = "../../OutputFiles/outputPython.py";
+            string outputfilePath = "../OutputFiles/outputPython.py";
             try
             {
                 using (FileStream fs = File.Create(outputfilePath)) { }
@@ -2122,7 +2122,7 @@ namespace CGrammar
                 string sourceName = recognizer.InputStream.SourceName;
                 //Console.WriteLine("line:{0} col:{1}\nmsg: {3}", line, charPositionInLine, sourceName, msg);
                 string errorMessage = $"line:{line} col:{charPositionInLine}\nmsg: {msg}";
-                string outputfilePath = "../../OutputFiles/error.txt";
+                string outputfilePath = "../OutputFiles/error.txt";
 
                 try {
                     File.WriteAllText(outputfilePath, errorMessage);

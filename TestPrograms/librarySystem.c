@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// Struktura reprezentująca książkę
 struct Book {
     char title[100];
     char author[100];
@@ -10,18 +9,11 @@ struct Book {
 
 
 int main() {
-    // Tablica książek
     struct Book library[100];
-    
 
-    // Licznik książek w bibliotece
-    int bookCount = 0;    
-    
-    // Zmienna do przechowywania wyboru użytkownika
-    int choice;
+    int bookCount = 0, choice;   
     
     do {
-        // Wyświetlanie menu
         printf("\nBiblioteka - wybierz opcję:\n");
         printf("1. Dodaj książkę\n");
         printf("2. Wyświetl wszystkie książki\n");
@@ -34,7 +26,6 @@ int main() {
         
         switch(choice) {
             case 1:
-                // Dodawanie książki
                 printf("\nDodawanie książki:\n");
                 printf("Tytuł: ");
                 scanf("%s", library[bookCount].title);
@@ -47,7 +38,6 @@ int main() {
                 break;
                 
             case 2:
-                // Wyświetlanie wszystkich książek
                 printf("\nWszystkie książki w bibliotece:\n");
                 for(int i = 0; i < bookCount; i++) {
                     printf("Książka %d:\n", i + 1);
@@ -58,7 +48,6 @@ int main() {
                 break;
                 
             case 3:
-                // Szukanie książki
                 printf("\nSzukanie książki:\n");
                 printf("Podaj tytuł książki: ");
                 char searchTitle[100];
@@ -76,7 +65,6 @@ int main() {
                 break;
                 
             case 4:
-                // Usuwanie książki
                 printf("\nUsuwanie książki:\n");
                 printf("Podaj tytuł książki do usunięcia: ");
                 char deleteTitle[100];
@@ -84,7 +72,6 @@ int main() {
                 
                 for(int i = 0; i < bookCount; i++) {
                     if(strcmp(library[i].title, deleteTitle) == 0) {
-                        // Przesunięcie pozostałych książek
                         for(int j = i; j < bookCount - 1; j++) {
                             strcpy(library[j].title, library[j + 1].title);
                             strcpy(library[j].author, library[j + 1].author);
@@ -98,7 +85,6 @@ int main() {
                 break;
                 
             case 5:
-                // Wyjście z programu
                 printf("\nDo widzenia!\n");
                 break;
                 

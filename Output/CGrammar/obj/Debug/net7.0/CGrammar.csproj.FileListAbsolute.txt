@@ -32,3 +32,37 @@ C:\Users\kacpe\OneDrive\Pulpit\Kompilatory\ProjektTKiK\Output\CGrammar\obj\Debug
 C:\Users\kacpe\OneDrive\Pulpit\Kompilatory\ProjektTKiK\Output\CGrammar\obj\Debug\net7.0\CGrammar.pdb
 C:\Users\kacpe\OneDrive\Pulpit\Kompilatory\ProjektTKiK\Output\CGrammar\obj\Debug\net7.0\CGrammar.genruntimeconfig.cache
 C:\Users\kacpe\OneDrive\Pulpit\Kompilatory\ProjektTKiK\Output\CGrammar\obj\Debug\net7.0\ref\CGrammar.dll
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.exe
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.deps.json
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.runtimeconfig.json
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.dll
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.pdb
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\Antlr4.Runtime.Standard.dll
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.AssemblyReference.cache
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.AssemblyInfoInputs.cache
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.AssemblyInfo.cs
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.CoreCompileInputs.cache
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.Up2Date
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.dll
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\refint\CGrammar.dll
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.pdb
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.genruntimeconfig.cache
+C:\Users\tmade\Downloads\TKiK-C-to-Python-main (1)\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\ref\CGrammar.dll
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.exe
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.deps.json
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.runtimeconfig.json
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.dll
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\CGrammar.pdb
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\bin\Debug\net7.0\Antlr4.Runtime.Standard.dll
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.AssemblyReference.cache
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.AssemblyInfoInputs.cache
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.AssemblyInfo.cs
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.CoreCompileInputs.cache
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.csproj.Up2Date
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.dll
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\refint\CGrammar.dll
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.pdb
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\CGrammar.genruntimeconfig.cache
+C:\Users\miskr\TKiK\TKiK-C-to-Python-main\TKiK-C-to-Python-main\Output\CGrammar\obj\Debug\net7.0\ref\CGrammar.dll

@@ -43,21 +43,22 @@ int main() {
     scanf("%d", &n);
 
     int arr[n];
-    /*printf("Podaj %d liczb:\n", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }*/
-    //int arr[20] = {8, 12, 45, 67, 23, 11, 5, 89, 34, 16, 72, 9, 3, 56, 20, 44, 15, 78, 30, 62};
-    
+
+
     for (int i = 0; i < n; i++) {
         arr[i] = rand() % 200 - 100;
-    } 
-
+    }
     printf("Wylosowane liczby:\n");
+
+    // printf("Podaj %d liczb:\n", n);
+    // for (int i = 0; i < n; i++) {
+    //     scanf("%d", &arr[i]);
+    // }
+
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
-    }    
-    
+    }
+
     quickSort(arr, 0, n - 1);
 
     printf("\nPosortowane liczby:\n");

@@ -8,18 +8,11 @@ int dodawanie(int liczba1,int liczba2){
 }
 
 int main() {
-    char text[100]; 
-    printf("Podaj string:\n");
-    scanf("%s", text); 
-
-    
-    printf("Podałeś: %s\n", text);
-    int testDeklaracja;
-    int testInicjalizacja = 1;
     int input1;
     char input2;
     printf("Podaj cyfrę od 0 do 9 oraz literę:\n");
     scanf("%d %c", &input1,&input2);
+    
     struct myStructure s1;
     printf("Podaj 2 liczby\n");
     scanf("%d%d", &s1.number1, &s1.number2);

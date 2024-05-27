@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Konwerter - C/Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css">
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar 
+        {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 5px;
+            margin: 0px 0px;
+            width: 100%;
+            box-sizing: content-box;
+            position: relative;
+            top: 0;
+        }
+
+        .navbar .container
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 0px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand 
+        {
+            font-size: 1.5em;
+        }
+
+        .navbar-buttons 
+        {
+            display: border-box;
+        }
+
+        .navbar-button 
+        {
+            padding: 8px 16px;
+            margin: 0px auto 0;
+            margin-left: 5px;
+            background-color: #0056b3;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .navbar-button:hover 
+        {
+            background-color: #004080;
+        }
+
+        .container 
+        {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0px auto 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-weight: bold;
+            padding-top: 0px;
+        }
+
+        .input-output-container 
+        {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .error-container 
+        {
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        .text-area 
+        {
+            width: 48%;
+            position: relative;
+        }
+
+        .CodeMirror 
+        {
+            height: 450px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-y: hidden;
+        }
+
+        .CodeMirror * {
+            font-size: 14px; /* Change this value to adjust font size */
+        }
+
+        .error-container {
+            width: 100%;
+            height: 1%;
+            margin-top: 0px;
+        }
+
+        .errors {
+            width: 84%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            @* resize: none;
+            overflow-y: auto; *@
+        }
+
+        .text {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-block-end: unset;
+        }
+
+        .button-container {
+            margin-top: 0px;
+        }
+
+        .convert-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .convert-button:hover {
+            background-color: #0056b3;
+        }
+
+        .highlight-line 
+        {
+            background-color: rgba(255, 0, 0, 0.5) !important; /* Red background for the highlighted line */
+        }    
+        
+        .loading-indicator 
+        {
+            
+        }      
+        
+        .loading 
+        {
+            position: absolute;
+            top: 47.5%;
+            left: 45%;
+            width: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 8px solid #8f87bf;
+            animation:
+            l20-1 0.8s infinite linear alternate,
+            l20-2 1.6s infinite linear;
+        }
+
+        @@keyframes l20-1{
+        0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+        12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+        25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+        50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+        62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+        75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+        100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+        }
+
+        @@keyframes l20-2{ 
+        0%    {transform:scaleY(1)  rotate(0deg)}
+        49.99%{transform:scaleY(1)  rotate(135deg)}
+        50%   {transform:scaleY(-1) rotate(0deg)}
+        100%  {transform:scaleY(-1) rotate(-135deg)}
+        }     
+
+        .copy-btn {
+            position: absolute;
+            top: 40px;
+            right: 0px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+         }  
+    </style>
+</head>
+<body>
+    <!-- Pasek nawigacyjny -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <span>Konwerter - C/Python</span>
+            </div>
+            <div class="navbar-buttons">
+                <button id="loadButton" class="navbar-button">Wczytaj</button>
+                
+                <button id="convertButton" class="navbar-button">Konwertuj</button>
+                <button id="saveButton" class="navbar-button">Zapisz</button>
+                <a href="https://github.com/miskrz/TKiK-C-to-Python" target="_blank" class="navbar-button">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Renderowanie sekcji 'content' -->
+        @RenderSection("content", required: false)
+        
+        <!-- Reszta zawartości layoutu -->
+        <div class="input-output-container">
+            <div class="text-area">
+                <h2>Wejście</h2>
+                <textarea id="inputText" class="input">// Wprowadź kod w jezyku C</textarea>
+            </div>
+            
+            <div class="text-area">                
+                <h2>Wyjście</h2>                
+                <textarea id="outputText" class="output" readonly>// Wynikowy kod w języku Python</textarea>     
+                <div class="loading-indicator"></div>
+                <button id="copyButton" class="copy-btn">Kopiuj do schowka</button>                
+            </div>
+        </div>        
+        
+        <div class="error-container">
+            <h2>Błędy</h2>
+            <textarea id="errorsText" class="errors" readonly></textarea>
+        </div>
+
+        <div id="responseMessage" style="margin-top: 10px; font-weight: bold;"></div>
+    </div>
+
+    <input type="file" id="fileInput" accept=".txt, .c" style="display: none;">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script>      
+        $(document).ready(function() {                   
+            var inputEditor = CodeMirror.fromTextArea(document.getElementById('inputText'), {
+                lineNumbers: true,
+                mode: 'text/x-csrc',
+                theme: 'material',
+                matchBrackets: true,
+                autoCloseBrackets: true,
+                lineWrapping: false
+            });            
+
+            var outputEditor = CodeMirror.fromTextArea(document.getElementById('outputText'), {
+                lineNumbers: true,
+                mode: 'text/x-python',
+                theme: 'material',
+                readOnly: true,
+                lineWrapping: false
+            });
+            
+            var errorsEditor = CodeMirror.fromTextArea(document.getElementById('errorsText'), {
+                lineNumbers: true,
+                mode: 'text/plain',
+                theme: 'material',
+                readOnly: true,
+                lineWrapping: false
+            });
+            errorsEditor.setSize(null, '200px');
+
+            $('#loadButton').click(function() {
+                $('#fileInput').click();
+            });
+
+            $('#fileInput').change(function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                const fileName = file.name;
+                const fileExtension = fileName.split('.').pop();
+
+                if (fileExtension !== 'txt' && fileExtension !== 'c') {
+                    alert('Proszę wybrać plik z rozszerzeniem .txt lub .c');
+                    return;
+                }
+
+                reader.onload = function(e) {
+                    inputEditor.setValue(e.target.result);
+                };
+
+                reader.readAsText(file);
+            });
+
+            $('#convertButton').click(function() {
+                $('.loading-indicator').addClass('loading');
+                
+                for (var i = 0; i < inputEditor.lineCount(); i++) {
+                    inputEditor.removeLineClass(i, 'background', 'highlight-line');                    
+                }
+                
+                errorsEditor.setValue("");
+                outputEditor.setValue("");
+                var inputData = inputEditor.getValue();
+                $.ajax({
+                    url: '@Url.Action("SaveInputToFile", "Home")',
+                    type: 'POST',
+                    data: { inputData: inputData},
+                    success: function(response) {
+                        if (response.success) {
+                            $('#responseMessage').text('');
+                        } else {
+                            $('#responseMessage').text('Error: ' + response.error);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $('#responseMessage').text('An error occurred: ' + error);
+                    }
+                });
+
+                $.ajax({
+                    url: '/Home/RunApp',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    success: function(data) {},
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                    }
+                });
+
+                setTimeout(function() {
+                    $.ajax({
+                        url: '/Home/GetErrorFile',
+                        type: 'GET',
+                        success: function(data) {
+                            errorsEditor.setValue(data);
+
+                            if (!data) {
+                                $.ajax({
+                                    url: '/Home/GetOutputFile',
+                                    type: 'GET',
+                                    success: function(data) {
+                                        outputEditor.setValue(data);                                        
+                                    },
+                                    error: function(xhr, status, error) {                                        
+                                        console.error('Error:', error);
+                                    }
+                                });
+                            }
+                            else {
+                                var lineNumber = parseInt(data.match(/line:(\d+)/)[1]);                                
+                                inputEditor.addLineClass(lineNumber - 1, 'background', 'highlight-line');                                
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                    $('.loading-indicator').removeClass('loading');
+                }, 2000);
+            });
+
+            $('#saveButton').click(function() {
+                var outputContent = outputEditor.getValue();
+                var blob = new Blob([outputContent], { type: 'text/plain' });
+                var fileName = 'output.py';
+
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = fileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            $('#copyButton').click(function() {                
+                try {
+                    navigator.clipboard.writeText(outputEditor.getValue());                              
+                    showAlert("Skopiowano do schowka!");
+                } catch(err) {
+                    showAlert("Nie udało się skopiować");
+                }            
+                
+
+            });
+
+            function showAlert(message) {
+                var alertDiv = document.createElement('div');
+                alertDiv.textContent = message;
+                alertDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                alertDiv.style.color = 'white';
+                alertDiv.style.padding = '10px';
+                alertDiv.style.position = 'fixed';
+                alertDiv.style.top = '100px';
+                alertDiv.style.left = '93%';
+                alertDiv.style.transform = 'translate(-50%, -50%)';
+                alertDiv.style.zIndex = '9999';
+                document.body.appendChild(alertDiv);
+                
+                setTimeout(function() {
+                    alertDiv.parentNode.removeChild(alertDiv);
+            }, 2000); 
+        }
+        });        
+        
+        
+    </script>
+</body>
+</html>
