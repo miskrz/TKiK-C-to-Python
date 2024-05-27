@@ -332,6 +332,26 @@ public interface IC_GrammarListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitInitializer([NotNull] C_GrammarParser.InitializerContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

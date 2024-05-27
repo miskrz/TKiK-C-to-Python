@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define LOSUJ 1
+#if LOSUJ == 1
+int losuj = 1;
+#else 
+int losuj = 0;
+#endif
+
+
+
 int partition(int arr[], int low, int high) {
     int pivot = arr[high];
     int i = (low - 1);
@@ -44,16 +53,19 @@ int main() {
 
     int arr[n];
 
-
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 200 - 100;
+    if(losuj)
+    {
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand() % 200 - 100;            
+        }
+        printf("Wylosowane liczby:\n");
     }
-    printf("Wylosowane liczby:\n");
-
-    // printf("Podaj %d liczb:\n", n);
-    // for (int i = 0; i < n; i++) {
-    //     scanf("%d", &arr[i]);
-    // }
+    else {
+        printf("Podaj %d liczb:\n", n);
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &arr[i]);
+        }
+    }   
 
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);

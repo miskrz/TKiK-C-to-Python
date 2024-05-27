@@ -273,6 +273,7 @@ namespace CGrammar
             if (context.Hash_Include() != null && context.Less() != null && context.libraryName() != null &&
                 context.Greater() != null)
             {
+                //pythonText.Append(context.GetText()+"\n");
             }
             
 
@@ -313,13 +314,13 @@ namespace CGrammar
         }
         public override object VisitIfStatement(C_GrammarParser.IfStatementContext context)
         {
-            if (context.Hash_if() != null && context.expression() != null && context.statementList() != null)
+            if (context.Hash_if() != null && context.expression() != null && context.externalDeclaration() != null)
             {
                 pythonText.Append("if ");
                 Visit(context.expression());
                 indentPlus();
                 pythonText.Append(": \n" + indent);
-                Visit(context.statementList());
+                Visit(context.externalDeclaration());
                 indentMinus();
                 string ending = indentValueS;
                 if (pythonText.ToString().EndsWith(ending))
@@ -362,13 +363,13 @@ namespace CGrammar
         }
         public override object VisitElifStatement(C_GrammarParser.ElifStatementContext context)
         {
-            if (context.Hash_elif != null && context.expression() != null && context.statementList() != null)
+            if (context.Hash_elif != null && context.expression() != null && context.externalDeclaration() != null)
             {
                 pythonText.Append("elif ");
                 Visit(context.expression());
                 indentPlus();
                 pythonText.Append(": \n" + indent);
-                Visit(context.statementList());
+                Visit(context.externalDeclaration());
                 indentMinus();
                 string ending = indentValueS;
                 if (pythonText.ToString().EndsWith(ending))
@@ -382,12 +383,12 @@ namespace CGrammar
         
         public override object VisitElseStatement(C_GrammarParser.ElseStatementContext context)
         {
-            if (context.Hash_else != null && context.statementList() != null)
+            if (context.Hash_else != null && context.externalDeclaration() != null)
             {
                 indentPlus();
                 pythonText.Append("else: \n" + indent);
                 
-                Visit(context.statementList());
+                Visit(context.externalDeclaration());
                 indentMinus();
                 string ending = indentValueS;
                 if (pythonText.ToString().EndsWith(ending))
@@ -411,12 +412,12 @@ namespace CGrammar
         }
         public override object VisitIfdefStatement(C_GrammarParser.IfdefStatementContext context)
         {
-            if (context.Hash_ifdef() != null && context.Identifier() != null && context.statementList() != null && context.Hash_endif() != null)
+            if (context.Hash_ifdef() != null && context.Identifier() != null && context.externalDeclaration() != null && context.Hash_endif() != null)
             {
                 indentPlus();
                 pythonText.Append($"if {context.Identifier()} is not None:\n"+indent);
                 
-                Visit(context.statementList());
+                Visit(context.externalDeclaration());
                 indentMinus();
                 string ending = indentValueS;
                 if (pythonText.ToString().EndsWith(ending))
@@ -429,12 +430,12 @@ namespace CGrammar
         }
         public override object VisitIfndefStatement(C_GrammarParser.IfndefStatementContext context)
         {
-            if (context.Hash_ifndef() != null && context.Identifier() != null)
+            if (context.Hash_ifndef() != null && context.Identifier() != null && context.externalDeclaration() != null && context.Hash_endif() != null)
             {
                 indentPlus();
                 pythonText.Append($"if {context.Identifier()} is None:\n"+indent);
                 
-                Visit(context.statementList());
+                Visit(context.externalDeclaration());
                 indentMinus();
                 string ending = indentValueS;
                 if (pythonText.ToString().EndsWith(ending))
@@ -2088,14 +2089,22 @@ namespace CGrammar
             return null;
         }
         
-        public override object VisitBlockItem([NotNull] C_GrammarParser.BlockItemContext context) {
+        public override object VisitBlockItem([NotNull] C_GrammarParser.BlockItemContext context)
+        {
             
-            if (context.statementList() != null) {
+            if (context.statementList() != null)
+            {
                 Visit(context.statementList());
             }
-            else if (context.declarationList() != null) {
+            else if (context.declarationList() != null)
+            {
                 Visit(context.declarationList());
             }
+            else if (context.hashStatement() != null)
+            {
+                Visit(context.hashStatement());
+            }
+            
             return null;
         }
         

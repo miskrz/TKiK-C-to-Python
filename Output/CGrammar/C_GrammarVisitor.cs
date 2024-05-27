@@ -213,6 +213,18 @@ public interface IC_GrammarVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitInitializer([NotNull] C_GrammarParser.InitializerContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

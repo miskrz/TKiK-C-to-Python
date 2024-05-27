@@ -2,87 +2,73 @@ import sys
 import random
 
 
-class Book:
-    def __init__(self, title = [None] * (100), author = [None] * (100), year = None):
-        self.title = title
-        self.author = author
-        self.year = year
+LOSUJ = 0
+if LOSUJ == 1: 
+    losuj = 1
+else: 
+    losuj = 0
 
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = (low - 1)
+    j = low
+    for _ in range(low, 1 + high - 1):
+        if j <= high - 1:
+            if arr[j] <= pivot:
+                i += 1
+                temp = arr[i]
+                arr[i] = arr[j]
+                arr[j] = temp
+            j += 1
+    temp = arr[i + 1]
+    arr[i + 1] = arr[high]
+    arr[high] = temp
+    return i + 1
+    
 
+def quickSort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quickSort(arr, low, pi - 1)
+        quickSort(arr, pi + 1, high)
+    
 
 def main():
-    library = [Book() for _ in range(100)]
-    bookCount = 0
-    choice = None
-    while True:
-        print("\nBiblioteka - wybierz opcję:\n", end = '')
-        print("1. Dodaj książkę\n", end = '')
-        print("2. Wyświetl wszystkie książki\n", end = '')
-        print("3. Szukaj książki\n", end = '')
-        print("4. Usuń książkę\n", end = '')
-        print("5. Wyjdź\n", end = '')
-        print("Wybór: ", end = '')
-        choice = int(input(""))
-        match choice:
-            case 1: 
-                print("\nDodawanie książki:\n", end = '')
-                print("Tytuł: ", end = '')
-                library[bookCount].title = str(input(""))
-                print("Autor: ", end = '')
-                library[bookCount].author = str(input(""))
-                print("Rok wydania: ", end = '')
-                library[bookCount].year = int(input(""))
-                bookCount += 1
-            case 2: 
-                print("\nWszystkie książki w bibliotece:\n", end = '')
-                i = 0
-                for _ in range(0, bookCount):
-                    if i < bookCount:
-                        print("Książka {}:\n".format(i + 1), end = '')
-                        print("Tytuł: {}\n".format(library[i].title), end = '')
-                        print("Autor: {}\n".format(library[i].author), end = '')
-                        print("Rok wydania: {}\n".format(library[i].year), end = '')
-                        i += 1
-            case 3: 
-                print("\nSzukanie książki:\n", end = '')
-                print("Podaj tytuł książki: ", end = '')
-                searchTitle = [None] * (100)
-                searchTitle = str(input(""))
-                i = 0
-                for _ in range(0, bookCount):
-                    if i < bookCount:
-                        if library[i].title == searchTitle:
-                            print("Znaleziono książkę:\n", end = '')
-                            print("Tytuł: {}\n".format(library[i].title), end = '')
-                            print("Autor: {}\n".format(library[i].author), end = '')
-                            print("Rok wydania: {}\n".format(library[i].year), end = '')
-                            break
-                        i += 1
-            case 4: 
-                print("\nUsuwanie książki:\n", end = '')
-                print("Podaj tytuł książki do usunięcia: ", end = '')
-                deleteTitle = [None] * (100)
-                deleteTitle = str(input(""))
-                i = 0
-                for _ in range(0, bookCount):
-                    if i < bookCount:
-                        if library[i].title == deleteTitle:
-                            j = i
-                            for _ in range(i, bookCount - 1):
-                                if j < bookCount - 1:
-                                    library[j].title = library[j + 1].title
-                                    library[j].author = library[j + 1].author
-                                    library[j].year = library[j + 1].year
-                                    j += 1
-                            bookCount -= 1
-                            print("Książka usunięta.\n", end = '')
-                        j += 1
-            case 5: 
-                print("\nDo widzenia!\n", end = '')
-            case _: 
-                print("\nNiepoprawny wybór. Spróbuj ponownie.\n", end = '')
-        if not (choice != 5):
-            break
+    seed = None
+    print("Podaj ziarno: ", end = '')
+    seed = int(input(""))
+    random.seed(seed)
+    n = 20
+    print("Podaj ilosc liczb do posortowania: ", end = '')
+    n = int(input(""))
+    arr = [None] * (n)
+    if losuj:
+        i = 0
+        for _ in range(0, n):
+            if i < n:
+                arr[i] = random.randint(0, sys.maxsize) % 200 - 100
+                i += 1
+        print("Wylosowane liczby:\n", end = '')
+    else: 
+        print("Podaj {} liczb:\n".format(n), end = '')
+        i = 0
+        for _ in range(0, n):
+            if i < n:
+                arr[i] = int(input(""))
+                i += 1
+    i = 0
+    for _ in range(0, n):
+        if i < n:
+            print("{} ".format(arr[i]), end = '')
+            i += 1
+    quickSort(arr, 0, n - 1)
+    print("\nPosortowane liczby:\n", end = '')
+    i = 0
+    for _ in range(0, n):
+        if i < n:
+            print("{} ".format(arr[i]), end = '')
+            i += 1
+    print("\n", end = '')
     return 0
     
 

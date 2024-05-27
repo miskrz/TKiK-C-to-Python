@@ -10,7 +10,6 @@ translationUnit
     | translationUnit externalDeclaration
     ;
 
-//preprocessor 
 hashStatement
     : includeStatement
     | defineStatement
@@ -19,14 +18,14 @@ hashStatement
     | ifdefStatement 
     | ifndefStatement 
     ;
-    
+
 conditionalStatement
     : ifStatement Hash_endif
     | ifElseStatement Hash_endif
     ;
-    
+
 ifStatement
-    : Hash_if expression statementList
+    : Hash_if expression externalDeclaration
     ;
 
 ifElseStatement
@@ -39,11 +38,11 @@ elseIfBlock
     ;
 
 elifStatement
-    : Hash_elif expression statementList
+    : Hash_elif expression externalDeclaration
     ;
 
 elseStatement
-    : Hash_else statementList
+    : Hash_else externalDeclaration
     ;
     
 defineStatement
@@ -55,11 +54,11 @@ undefStatement
     ;
     
 ifdefStatement 
-    : Hash_ifdef Identifier statementList Hash_endif
+    : Hash_ifdef Identifier externalDeclaration Hash_endif
     ;
 
 ifndefStatement 
-    : Hash_ifndef Identifier statementList Hash_endif
+    : Hash_ifndef Identifier externalDeclaration Hash_endif
     ;        
 
 includeStatement
@@ -130,6 +129,7 @@ blockItemList
 blockItem
     : statementList
     | declarationList
+    | hashStatement
     ;
     
 labeledStatement
@@ -158,6 +158,24 @@ initializer
 	| LeftBrace initializerList Comma RightBrace
 	;
 
+directAbstractDeclarator
+	: LeftParen abstractDeclarator RightParen
+	| LeftBracket RightBracket
+	| LeftBracket constantExpression RightBracket
+	| directAbstractDeclarator LeftBracket RightBracket
+	| directAbstractDeclarator LeftBracket constantExpression RightBracket
+	| LeftParen RightParen
+	| LeftParen parameterList RightParen
+	| directAbstractDeclarator LeftParen RightParen
+	| directAbstractDeclarator LeftParen parameterList RightParen
+	;
+	
+abstractDeclarator
+	: pointer
+	| directAbstractDeclarator
+	| pointer directAbstractDeclarator
+	;
+	
 identifierList
 	: Identifier
 	| identifierList Comma Identifier
@@ -165,6 +183,7 @@ identifierList
 	
 parameterDeclaration
 	: declarationSpecifiers declarator
+	| declarationSpecifiers abstractDeclarator
 	| declarationSpecifiers
 	;
 	
@@ -175,6 +194,7 @@ parameterList
 	
 typeQualifierList
 	: Const
+	| typeQualifierList Const
 	;
 	
 pointer
@@ -208,6 +228,7 @@ specifierQualifierList
 	
 structSpecifier
 	: Struct Identifier LeftBrace structDeclarationList RightBrace
+	| Struct LeftBrace structDeclarationList RightBrace
 	| Struct Identifier
 	;
 
@@ -227,6 +248,8 @@ structDeclaratorList
 	
 structDeclarator
 	: declarator
+	| Colon constantExpression
+	| declarator Colon constantExpression
 	;
 	
 storageClassSpecifier
@@ -258,6 +281,7 @@ typeNameIdentifier
     
 typeName
 	: specifierQualifierList
+	| specifierQualifierList abstractDeclarator
 	;
 	
 declarationSpecifiers

@@ -397,6 +397,30 @@ public partial class C_GrammarBaseListener : IC_GrammarListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitInitializer([NotNull] C_GrammarParser.InitializerContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.directAbstractDeclarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDirectAbstractDeclarator([NotNull] C_GrammarParser.DirectAbstractDeclaratorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="C_GrammarParser.abstractDeclarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAbstractDeclarator([NotNull] C_GrammarParser.AbstractDeclaratorContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="C_GrammarParser.identifierList"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
