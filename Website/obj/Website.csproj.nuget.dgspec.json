@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miskr\\TKiK\\TKiK-C-to-Python-main\\TKiK-C-to-Python-main\\Website\\Website.csproj": {}
+    "C:\\Users\\miskr\\TKiK\\TKiK_GITHUB\\TKiK-C-to-Python\\Website\\Website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miskr\\TKiK\\TKiK-C-to-Python-main\\TKiK-C-to-Python-main\\Website\\Website.csproj": {
+    "C:\\Users\\miskr\\TKiK\\TKiK_GITHUB\\TKiK-C-to-Python\\Website\\Website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miskr\\TKiK\\TKiK-C-to-Python-main\\TKiK-C-to-Python-main\\Website\\Website.csproj",
+        "projectUniqueName": "C:\\Users\\miskr\\TKiK\\TKiK_GITHUB\\TKiK-C-to-Python\\Website\\Website.csproj",
         "projectName": "Website",
-        "projectPath": "C:\\Users\\miskr\\TKiK\\TKiK-C-to-Python-main\\TKiK-C-to-Python-main\\Website\\Website.csproj",
+        "projectPath": "C:\\Users\\miskr\\TKiK\\TKiK_GITHUB\\TKiK-C-to-Python\\Website\\Website.csproj",
         "packagesPath": "C:\\Users\\miskr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miskr\\TKiK\\TKiK-C-to-Python-main\\TKiK-C-to-Python-main\\Website\\obj\\",
+        "outputPath": "C:\\Users\\miskr\\TKiK\\TKiK_GITHUB\\TKiK-C-to-Python\\Website\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\miskr\\AppData\\Roaming\\NuGet\\NuGet.Config",
