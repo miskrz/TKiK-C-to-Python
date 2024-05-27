@@ -34,7 +34,7 @@
 1. Do samego uruchomienia wymagany są powyższe pakiety.
 2. Aby uruchomić aplikację należy, po pobraniu repozytorium, komendą zmienić aktualny folder na Website (`cd Website`), następnie uruchomić aplikację po wpisaniu `dotnet run`.
 3. Program powinien się uruchomić i wyświetlić link do strony.
-4. Przyciski i opisy na stronie są czytelne i nie wymagają instrukcji obsługi.
+4. Szczegółowy opis korzystania ze strony znajduje się poniżej.
 
 ### Ewentualne modyfikacje
 1. Aby modyfikować gramatykę należy pobrać [antlr4](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md#installation) oraz przy pomocy np. NuGet'a zainstalować pakiet `Antlr4.Runtime.Standard`
@@ -58,7 +58,7 @@ Powyższy program:
 
 ![simpletest](/Resources/simpletest.png)
 
-Przykładowy program z strukturą, scanf i printf:
+Przykładowy program ze strukturą, scanf i printf:
 
 ![advancedtest](/Resources/advancedtest.png)
 
