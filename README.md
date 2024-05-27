@@ -1,6 +1,4 @@
-# Temat projektu
-
- Konwerter - C/Python
+# Konwerter - C/Python
 
 ## Dane studenta(-ów)
 - Michał Krzempek
