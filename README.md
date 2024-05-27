@@ -13,7 +13,7 @@
 ## Założenia programu
 1. Napisanie programu, który przekształci plik z języka C na język Python.
 2. Rodzaj translatora: kompilator
-3. Wynik działania programu: Kompilator języka C do Python
+3. Wynik działania programu: Kompilator języka C do języka Python
 4. Język implementacji: C#
 5. Sposób realizacji skanera/parsera: [Antlrv4](https://www.antlr.org/)
 
