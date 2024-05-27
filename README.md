@@ -62,13 +62,13 @@ Przykładowy program ze strukturą, scanf i printf:
 
 ![advancedtest](/Resources/advancedtest.png)
 
-
 ### GUI 
 1. Ręczne wpisywanie bądź wczytywanie danych z pliku (format `.c` lub `.txt`)
 2. Zapis do schowka lub zapis do pliku (pobiera plik `output.py`)
 3. Przycisk "Konwertuj", który wywołuje funkcję konwertującą
 4. Przycisk "Github" - link do repozytorium
-5. Obsługa błędów - w razie błędu w gramatyce, zmienia kolor linii, w której znaleziono błąd na czerwony, a dokładniejsze informacje umieszcza w okienku "Błędy" 
+5. Kolorowanie składni w obu okienkach (Wejście/Wyjście)
+6. Obsługa błędów - w razie błędu w gramatyce, zmienia kolor linii, w której znaleziono błąd na czerwony, a dokładniejsze informacje umieszcza w okienku "Błędy" 
 ![error](/Resources/error.png)
 ## Link do repozytorium z kodem GitHub:
 - [Repozytorium z kodem](https://github.com/miskrz/TKiK-C-to-Python/)
